@@ -1,6 +1,6 @@
 [project]
 name = "smtp-envelope-sender-parser"
-version = "0.1.0"
+version = "0.1.1"
 description = "Parses SMTP MAIL FROM and RCPT TO arguments into address and ESMTP parameters, removing source routes."
 requires-python = ">=3.10"
 dependencies = []
