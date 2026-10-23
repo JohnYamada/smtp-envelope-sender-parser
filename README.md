@@ -24,3 +24,10 @@ The trade-off: we do not validate that the local-part is a sensible mailbox, nor
 ## Edge cases
 
 RFC 5321 allows the address angle brackets to be empty, as in `MAIL FROM:<>`. This is the null sender address used for delivery status notifications. The parser accepts this and returns an empty string for `address`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
